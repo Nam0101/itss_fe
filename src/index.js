@@ -8,17 +8,20 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
-import store from "./stores";
+import { PersistGate } from "redux-persist/integration/react";
 import { pdfjs } from "react-pdf";
+import { persistor, store } from "./stores";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/3.12.0/pdf.worker.min.js`;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <PersistGate loading={null} persistor={persistor}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </PersistGate>
   </Provider>
 );
 

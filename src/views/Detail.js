@@ -8,14 +8,17 @@ import {
   Avatar,
 } from "@mui/material";
 import ContentRight from "./ContentRight";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import PdfViewer from "./PdfViewer";
+import { setNewComment } from "../stores/reducers/Subject";
 
 const Detail = () => {
   const src = useSelector((state) => state.Subject.src);
   const title = useSelector((state) => state.Subject.title);
   // const star = useSelector((state) => state.Subject.star);
+  const dispatch = useDispatch();
+  const newComment = useSelector((state) => state.Subject.newComment);
   const [myComment, setMyComment] = useState("");
   const [myStar, setMyStar] = useState(0);
   const [comment, setComment] = useState([
@@ -46,14 +49,13 @@ const Detail = () => {
     },
   ]);
   const handleSubmit = () => {
-    setComment([
-      {
+    dispatch(
+      setNewComment({
         name: "Phạm Xuân Duy",
         star: myStar,
         content: myComment,
-      },
-      ...comment,
-    ]);
+      })
+    );
   };
   return (
     <Box
@@ -221,6 +223,40 @@ const Detail = () => {
           >
             Bình luận:
           </Typography>
+          <Box>
+            {newComment && (
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  mt: 3,
+                  p: 3,
+                  bgcolor: "#f2f5f7",
+                }}
+              >
+                <Box sx={{ display: "flex" }}>
+                  <Avatar>{newComment.name[0]}</Avatar>
+                  <Typography
+                    gutterBottom
+                    variant="body1"
+                    sx={{ ml: 2, fontSize: "20px", fontWeight: "500", p: 0.7 }}
+                  >
+                    {newComment.name}
+                  </Typography>
+                </Box>
+                <Rating
+                  name="read-only"
+                  value={newComment.star}
+                  readOnly
+                  sx={{ fontSize: "20px" }}
+                />
+                <Typography variant="body1" sx={{ mt: 2 }}>
+                  {newComment.content}
+                </Typography>
+              </Box>
+            )}
+          </Box>
+
           <Box>
             {comment.map((item, index) => (
               <Box

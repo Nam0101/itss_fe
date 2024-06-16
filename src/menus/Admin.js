@@ -1,30 +1,3 @@
-// import HomeIcon from "@mui/icons-material/Home";
-import { RiHome4Line } from "react-icons/ri";
-import { HiOutlineShoppingCart } from "react-icons/hi";
-import { MdOutlineDirectionsBike } from "react-icons/md";
-import { FiTruck } from "react-icons/fi";
-import { SlPeople } from "react-icons/sl";
-import { LuShare2 } from "react-icons/lu";
-import { LuMonitorDot } from "react-icons/lu";
-import { LiaShippingFastSolid } from "react-icons/lia";
-import { MdOutlineDashboardCustomize } from "react-icons/md";
-import { FaRegCommentDots } from "react-icons/fa";
-import { MdOutlineSupportAgent } from "react-icons/md";
-
-const icons = {
-  RiHome4Line,
-  HiOutlineShoppingCart,
-  MdOutlineDirectionsBike,
-  FiTruck,
-  SlPeople,
-  LuShare2,
-  LuMonitorDot,
-  LiaShippingFastSolid,
-  MdOutlineDashboardCustomize,
-  FaRegCommentDots,
-  MdOutlineSupportAgent,
-};
-
 const cntt = {
   id: "cntt",
   title: "Công nghệ thông tin",
@@ -192,7 +165,7 @@ const lyluanchinhtri = {
       title: "Khiếu nại",
       type: "item",
       url: "/trangchu",
-      icon: icons.FaRegCommentDots,
+
       breadcrumbs: false,
     },
   ],
@@ -208,7 +181,7 @@ const hoavakhoahocsusong = {
       title: "Khiếu nại",
       type: "item",
       url: "/trangchu",
-      icon: icons.FaRegCommentDots,
+
       breadcrumbs: false,
     },
   ],
@@ -246,7 +219,7 @@ const vatlykythuat = {
       title: "Khiếu nại",
       type: "item",
       url: "/trangchu",
-      icon: icons.FaRegCommentDots,
+
       breadcrumbs: false,
     },
   ],
@@ -262,7 +235,7 @@ const ngoaingu = {
       title: "Khiếu nại",
       type: "item",
       url: "/trangchu",
-      icon: icons.FaRegCommentDots,
+
       breadcrumbs: false,
     },
   ],
@@ -278,7 +251,7 @@ const vatlieu = {
       title: "Khiếu nại",
       type: "item",
       url: "/trangchu",
-      icon: icons.FaRegCommentDots,
+
       breadcrumbs: false,
     },
   ],

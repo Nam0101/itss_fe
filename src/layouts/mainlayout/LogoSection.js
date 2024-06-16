@@ -1,5 +1,5 @@
 import { ButtonBase } from "@mui/material";
-import Logo from "../../assets/images/logo.svg";
+import Logo from "../../assets/images/logo.png";
 import { headerHeight } from "../../stores/Constant";
 
 const LogoSection = () => {

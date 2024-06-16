@@ -35,7 +35,7 @@ const ProfileSection = () => {
             aria-haspopup="true"
             aria-expanded={open ? "true" : undefined}
           >
-            <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
+            <Avatar sx={{ width: 40, height: 40 }}>P</Avatar>
           </IconButton>
         </Tooltip>
       </Box>

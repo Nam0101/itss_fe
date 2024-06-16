@@ -8,6 +8,7 @@ const Subject = createSlice({
     star: 0,
     listSubject: [],
     resultSearch: [],
+    newComment: {},
   },
   reducers: {
     setSubject: (state, action) => {
@@ -23,8 +24,12 @@ const Subject = createSlice({
     setResultSearch: (state, action) => {
       state.resultSearch = action.payload;
     },
+    setNewComment: (state, action) => {
+      state.newComment = action.payload;
+    },
   },
 });
 
-export const { setSubject, setListSubject, setResultSearch } = Subject.actions;
+export const { setSubject, setListSubject, setResultSearch, setNewComment } =
+  Subject.actions;
 export default Subject.reducer;
